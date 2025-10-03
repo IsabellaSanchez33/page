@@ -401,6 +401,260 @@
             <button class="boton-nav" onclick="showFinalScore()">Ver Puntuación Final</button>
             <button class="boton-nav" onclick="resetAllQuizzes()" style="margin-left: 1rem;">Reiniciar Todos los Quizzes</button>
         </div>
+
+        <!-- Sección de Preguntas Puntuales -->
+        <div class="quiz-container">
+            <h2 style="text-align: center; color: var(--azul-gris); margin: 3rem 0 2rem 0; font-size: 2rem;">Preguntas Puntuales</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: var(--azul-oscuro); font-size: 1.1rem;">
+                Preguntas específicas basadas en el contenido de cada sección del sitio web
+            </p>
+
+            <!-- Preguntas de Anatomía Muscular -->
+            <div class="quiz-card" id="pregunta-anatomia-1">
+                <h3 class="quiz-title">Anatomía Muscular - Pregunta 1</h3>
+                <p class="quiz-question">¿Cuál es la función del endomisio en la estructura muscular?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Rodea cada fascículo</div>
+                    <div class="quiz-option" data-correct="true">Rodea cada fibra muscular individual</div>
+                    <div class="quiz-option" data-correct="false">Rodea todo el músculo</div>
+                    <div class="quiz-option" data-correct="false">Organiza grupos de fibras</div>
+                </div>
+                <div class="quiz-result" id="result-anatomia-1"></div>
+                <div class="quiz-explanation" id="explanation-anatomia-1">
+                    El endomisio es la capa de tejido conectivo que rodea cada fibra muscular individual, proporcionando protección y aislamiento a cada célula muscular.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('anatomia-1')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('anatomia-1')">Reiniciar</button>
+            </div>
+
+            <div class="quiz-card" id="pregunta-anatomia-2">
+                <h3 class="quiz-title">Anatomía Muscular - Pregunta 2</h3>
+                <p class="quiz-question">¿Cuál de las siguientes proteínas forma los filamentos delgados del sarcómero?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Actina</div>
+                    <div class="quiz-option" data-correct="false">Miosina</div>
+                    <div class="quiz-option" data-correct="false">Troponina</div>
+                    <div class="quiz-option" data-correct="false">Tropomiosina</div>
+                </div>
+                <div class="quiz-result" id="result-anatomia-2"></div>
+                <div class="quiz-explanation" id="explanation-anatomia-2">
+                    La actina es la proteína que forma los filamentos delgados del sarcómero, mientras que la miosina forma los filamentos gruesos.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('anatomia-2')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('anatomia-2')">Reiniciar</button>
+            </div>
+
+            <!-- Preguntas de Ejercicios y Entrenamiento -->
+            <div class="quiz-card" id="pregunta-ejercicios-1">
+                <h3 class="quiz-title">Ejercicios y Entrenamiento - Pregunta 1</h3>
+                <p class="quiz-question">¿Qué tipo de contracción muscular ocurre cuando el músculo se alarga bajo tensión?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Contracción concéntrica</div>
+                    <div class="quiz-option" data-correct="false">Contracción isométrica</div>
+                    <div class="quiz-option" data-correct="true">Contracción excéntrica</div>
+                    <div class="quiz-option" data-correct="false">Contracción isotónica</div>
+                </div>
+                <div class="quiz-result" id="result-ejercicios-1"></div>
+                <div class="quiz-explanation" id="explanation-ejercicios-1">
+                    En una contracción excéntrica, el músculo se alarga bajo tensión. Un ejemplo es cuando bajas una pesa lentamente (el bíceps se alarga mientras resiste el peso).
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('ejercicios-1')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('ejercicios-1')">Reiniciar</button>
+            </div>
+
+            <div class="quiz-card" id="pregunta-ejercicios-2">
+                <h3 class="quiz-title">Ejercicios y Entrenamiento - Pregunta 2</h3>
+                <p class="quiz-question">¿Cuál es la duración recomendada para la fase de adaptación y técnica básica en el entrenamiento?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Semana 1-2</div>
+                    <div class="quiz-option" data-correct="false">Semana 3-4</div>
+                    <div class="quiz-option" data-correct="false">Semana 5-8</div>
+                    <div class="quiz-option" data-correct="false">Semana 1-4</div>
+                </div>
+                <div class="quiz-result" id="result-ejercicios-2"></div>
+                <div class="quiz-explanation" id="explanation-ejercicios-2">
+                    Las primeras 1-2 semanas del entrenamiento deben enfocarse en la adaptación del cuerpo y el aprendizaje de la técnica correcta antes de incrementar la intensidad.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('ejercicios-2')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('ejercicios-2')">Reiniciar</button>
+            </div>
+
+            <!-- Preguntas de Enfermedades y Lesiones -->
+            <div class="quiz-card" id="pregunta-enfermedades-1">
+                <h3 class="quiz-title">Enfermedades y Lesiones - Pregunta 1</h3>
+                <p class="quiz-question">¿Cuál es la causa principal de los calambres musculares según la información proporcionada?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Falta de ejercicio</div>
+                    <div class="quiz-option" data-correct="false">Exceso de proteínas</div>
+                    <div class="quiz-option" data-correct="true">Deshidratación o fatiga</div>
+                    <div class="quiz-option" data-correct="false">Falta de calcio</div>
+                </div>
+                <div class="quiz-result" id="result-enfermedades-1"></div>
+                <div class="quiz-explanation" id="explanation-enfermedades-1">
+                    Los calambres son contracciones involuntarias dolorosas que a menudo ocurren por deshidratación o fatiga muscular.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('enfermedades-1')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('enfermedades-1')">Reiniciar</button>
+            </div>
+
+            <div class="quiz-card" id="pregunta-enfermedades-2">
+                <h3 class="quiz-title">Enfermedades y Lesiones - Pregunta 2</h3>
+                <p class="quiz-question">¿Qué caracteriza a las distrofias musculares?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Son lesiones temporales</div>
+                    <div class="quiz-option" data-correct="true">Son enfermedades genéticas que causan debilitamiento progresivo</div>
+                    <div class="quiz-option" data-correct="false">Solo afectan a los músculos del corazón</div>
+                    <div class="quiz-option" data-correct="false">Se curan con reposo</div>
+                </div>
+                <div class="quiz-result" id="result-enfermedades-2"></div>
+                <div class="quiz-explanation" id="explanation-enfermedades-2">
+                    Las distrofias musculares son enfermedades genéticas que causan debilitamiento progresivo de los músculos, como la Distrofia muscular de Duchenne.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('enfermedades-2')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('enfermedades-2')">Reiniciar</button>
+            </div>
+
+            <!-- Preguntas de Funciones de los Músculos -->
+            <div class="quiz-card" id="pregunta-funciones-1">
+                <h3 class="quiz-title">Funciones de los Músculos - Pregunta 1</h3>
+                <p class="quiz-question">¿Qué músculos son responsables de mantener la cabeza erguida?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Músculos del abdomen</div>
+                    <div class="quiz-option" data-correct="true">Músculos del cuello como esplenios y trapecios</div>
+                    <div class="quiz-option" data-correct="false">Músculos de la espalda baja</div>
+                    <div class="quiz-option" data-correct="false">Músculos de los hombros</div>
+                </div>
+                <div class="quiz-result" id="result-funciones-1"></div>
+                <div class="quiz-explanation" id="explanation-funciones-1">
+                    Los músculos del cuello, como los esplenios y trapecios, son los responsables de mantener la cabeza erguida y en posición correcta.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('funciones-1')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('funciones-1')">Reiniciar</button>
+            </div>
+
+            <div class="quiz-card" id="pregunta-funciones-2">
+                <h3 class="quiz-title">Funciones de los Músculos - Pregunta 2</h3>
+                <p class="quiz-question">¿Cuál es el conjunto de músculos que estabiliza el hombro?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Cuádriceps e isquiotibiales</div>
+                    <div class="quiz-option" data-correct="false">Glúteos</div>
+                    <div class="quiz-option" data-correct="true">Manguito rotador (supraespinoso, infraespinoso, subescapular y redondo menor)</div>
+                    <div class="quiz-option" data-correct="false">Músculos del abdomen</div>
+                </div>
+                <div class="quiz-result" id="result-funciones-2"></div>
+                <div class="quiz-explanation" id="explanation-funciones-2">
+                    El manguito rotador es un conjunto de 4 músculos (supraespinoso, infraespinoso, subescapular y redondo menor) que estabilizan el hombro.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('funciones-2')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('funciones-2')">Reiniciar</button>
+            </div>
+
+            <!-- Preguntas de Nutrición y Músculos -->
+            <div class="quiz-card" id="pregunta-nutricion-1">
+                <h3 class="quiz-title">Nutrición y Músculos - Pregunta 1</h3>
+                <p class="quiz-question">¿Cuál es la dosis recomendada de proteína diaria para personas que hacen ejercicio regular?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">0.8-1.0 gramos por kg de peso corporal</div>
+                    <div class="quiz-option" data-correct="true">1.6-2.2 gramos por kg de peso corporal</div>
+                    <div class="quiz-option" data-correct="false">2.5-3.0 gramos por kg de peso corporal</div>
+                    <div class="quiz-option" data-correct="false">1.0-1.2 gramos por kg de peso corporal</div>
+                </div>
+                <div class="quiz-result" id="result-nutricion-1"></div>
+                <div class="quiz-explanation" id="explanation-nutricion-1">
+                    Para personas que hacen ejercicio regular, se recomienda consumir entre 1.6-2.2 gramos de proteína por kg de peso corporal al día para optimizar la recuperación y el crecimiento muscular.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('nutricion-1')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('nutricion-1')">Reiniciar</button>
+            </div>
+
+            <div class="quiz-card" id="pregunta-nutricion-2">
+                <h3 class="quiz-title">Nutrición y Músculos - Pregunta 2</h3>
+                <p class="quiz-question">¿Qué micronutriente es esencial para la contracción muscular?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Hierro</div>
+                    <div class="quiz-option" data-correct="true">Magnesio</div>
+                    <div class="quiz-option" data-correct="false">Zinc</div>
+                    <div class="quiz-option" data-correct="false">Sodio</div>
+                </div>
+                <div class="quiz-result" id="result-nutricion-2"></div>
+                <div class="quiz-explanation" id="explanation-nutricion-2">
+                    El magnesio es esencial para la contracción muscular y se encuentra en verduras de hoja verde y nueces.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('nutricion-2')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('nutricion-2')">Reiniciar</button>
+            </div>
+
+            <!-- Preguntas de ¿Qué son los músculos? -->
+            <div class="quiz-card" id="pregunta-que-son-1">
+                <h3 class="quiz-title">¿Qué son los músculos? - Pregunta 1</h3>
+                <p class="quiz-question">¿Cuáles son las células especializadas que forman los músculos?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Neuronas</div>
+                    <div class="quiz-option" data-correct="true">Fibras musculares</div>
+                    <div class="quiz-option" data-correct="false">Glóbulos rojos</div>
+                    <div class="quiz-option" data-correct="false">Osteocitos</div>
+                </div>
+                <div class="quiz-result" id="result-que-son-1"></div>
+                <div class="quiz-explanation" id="explanation-que-son-1">
+                    Los músculos están formados por células especializadas llamadas fibras musculares, que tienen la capacidad de contraerse y relajarse.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('que-son-1')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('que-son-1')">Reiniciar</button>
+            </div>
+
+            <div class="quiz-card" id="pregunta-que-son-2">
+                <h3 class="quiz-title">¿Qué son los músculos? - Pregunta 2</h3>
+                <p class="quiz-question">Además del movimiento, ¿qué otra función importante tienen los músculos?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Solo producir calor</div>
+                    <div class="quiz-option" data-correct="true">Mantener la postura y producir calor corporal</div>
+                    <div class="quiz-option" data-correct="false">Solo digerir alimentos</div>
+                    <div class="quiz-option" data-correct="false">Solo respirar</div>
+                </div>
+                <div class="quiz-result" id="result-que-son-2"></div>
+                <div class="quiz-explanation" id="explanation-que-son-2">
+                    Los músculos no solo facilitan el movimiento, sino que también ayudan a mantener la postura y producen calor corporal, siendo esenciales para funciones vitales.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('que-son-2')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('que-son-2')">Reiniciar</button>
+            </div>
+
+            <!-- Preguntas de Tipos de Músculos -->
+            <div class="quiz-card" id="pregunta-tipos-1">
+                <h3 class="quiz-title">Tipos de Músculos - Pregunta 1</h3>
+                <p class="quiz-question">¿Qué caracteriza al músculo cardíaco en cuanto a su control?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Es de control voluntario</div>
+                    <div class="quiz-option" data-correct="true">Es automático y de control involuntario</div>
+                    <div class="quiz-option" data-correct="false">Puede ser controlado voluntariamente</div>
+                    <div class="quiz-option" data-correct="false">No tiene control nervioso</div>
+                </div>
+                <div class="quiz-result" id="result-tipos-1"></div>
+                <div class="quiz-explanation" id="explanation-tipos-1">
+                    El músculo cardíaco es automático, es decir, es capaz de producir su propia estimulación sin necesidad del sistema nervioso, y es de control involuntario.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('tipos-1')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('tipos-1')">Reiniciar</button>
+            </div>
+
+            <div class="quiz-card" id="pregunta-tipos-2">
+                <h3 class="quiz-title">Tipos de Músculos - Pregunta 2</h3>
+                <p class="quiz-question">¿Cuál es la diferencia principal entre el músculo liso y el músculo esquelético?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">El músculo liso tiene más mitocondrias</div>
+                    <div class="quiz-option" data-correct="true">El músculo liso no posee estriaciones transversales visibles</div>
+                    <div class="quiz-option" data-correct="false">El músculo liso es de control voluntario</div>
+                    <div class="quiz-option" data-correct="false">El músculo liso solo se encuentra en el corazón</div>
+                </div>
+                <div class="quiz-result" id="result-tipos-2"></div>
+                <div class="quiz-explanation" id="explanation-tipos-2">
+                    El músculo liso se diferencia del músculo esquelético en que no posee estriaciones transversales visibles al microscopio, aunque también tiene actina y miosina como aparato contráctil.
+                </div>
+                <button class="quiz-submit" onclick="checkAnswer('tipos-2')">Verificar respuesta</button>
+                <button class="quiz-reset" onclick="resetQuiz('tipos-2')">Reiniciar</button>
+            </div>
+        </div>
+
         <!-- Navegación entre secciones -->
         <div class="navegacion-secciones">
             <a href="index.html" class="boton-volver">Volver al inicio</a>
@@ -409,14 +663,7 @@
     
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-text">
-                © 2025 MuscleQuest - Aplicación educativa | <a href="acerca-de-nosotros.html">Acerca de nosotros</a>
-            </div>
-            <div class="footer-logo">
-                <img src="img/escudo-colegio(1).jpg" alt="Escudo del colegio" class="escudo-colegio">
-            </div>
-        </div>
+        © 2025 MuscleQuest - Aplicación educativa | <a href="acerca-de-nosotros.html">Acerca de nosotros</a>
     </footer>
 
     <!-- Scripts -->
@@ -428,7 +675,7 @@
         };
 
         function selectOption(quizId, optionElement) {
-            const quizCard = document.getElementById(`quiz${quizId}`);
+            const quizCard = document.getElementById(`quiz${quizId}`) || document.getElementById(`pregunta-${quizId}`);
             const options = quizCard.querySelectorAll('.quiz-option');
             
             // Remover selección previa
@@ -439,10 +686,10 @@
         }
 
         function checkAnswer(quizId) {
-            const quizCard = document.getElementById(`quiz${quizId}`);
+            const quizCard = document.getElementById(`quiz${quizId}`) || document.getElementById(`pregunta-${quizId}`);
             const selectedOption = quizCard.querySelector('.quiz-option.selected');
-            const resultDiv = document.getElementById(`result${quizId}`);
-            const explanationDiv = document.getElementById(`explanation${quizId}`);
+            const resultDiv = document.getElementById(`result${quizId}`) || document.getElementById(`result-${quizId}`);
+            const explanationDiv = document.getElementById(`explanation${quizId}`) || document.getElementById(`explanation-${quizId}`);
             const submitBtn = quizCard.querySelector('.quiz-submit');
             
             if (!selectedOption) {
@@ -483,10 +730,10 @@
         }
 
         function resetQuiz(quizId) {
-            const quizCard = document.getElementById(`quiz${quizId}`);
+            const quizCard = document.getElementById(`quiz${quizId}`) || document.getElementById(`pregunta-${quizId}`);
             const options = quizCard.querySelectorAll('.quiz-option');
-            const resultDiv = document.getElementById(`result${quizId}`);
-            const explanationDiv = document.getElementById(`explanation${quizId}`);
+            const resultDiv = document.getElementById(`result${quizId}`) || document.getElementById(`result-${quizId}`);
+            const explanationDiv = document.getElementById(`explanation${quizId}`) || document.getElementById(`explanation-${quizId}`);
             const submitBtn = quizCard.querySelector('.quiz-submit');
             
             // Limpiar selecciones
@@ -532,7 +779,12 @@
             const options = document.querySelectorAll('.quiz-option');
             options.forEach(option => {
                 option.addEventListener('click', function() {
-                    const quizId = this.closest('.quiz-card').id.replace('quiz', '');
+                    const quizCard = this.closest('.quiz-card');
+                    let quizId = quizCard.id.replace('quiz', '');
+                    if (quizId === quizCard.id) {
+                        // Para las preguntas puntuales
+                        quizId = quizCard.id.replace('pregunta-', '');
+                    }
                     selectOption(quizId, this);
                 });
             });

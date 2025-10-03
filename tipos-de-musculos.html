@@ -7,6 +7,119 @@
     <meta name="description" content="Descubre los diferentes tipos de músculos del cuerpo humano.">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <style>
+        /* Estilos para el zoom de imágenes */
+        .zoomable {
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+        
+        .zoomable:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Modal de zoom */
+        .zoom-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+        
+        .zoom-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .zoom-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            animation: zoomIn 0.3s ease;
+        }
+        
+        .zoom-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .zoom-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .zoom-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .zoom-caption {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            right: 0;
+            color: white;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .zoom-content {
+                max-width: 95%;
+                max-height: 80%;
+            }
+            
+            .zoom-close {
+                top: -35px;
+                width: 35px;
+                height: 35px;
+                font-size: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header con botón hamburguesa -->
@@ -64,21 +177,21 @@
                 <p>
                     Este tipo de músculos se caracteriza porque cada una de sus células (fibras musculares) está rodeada de tejido conjuntivo, lo que las aísla eléctricamente de otras. Por esta razón, cada fibra muscular debe ser inervada por una fibra nerviosa que está bajo control voluntario del sistema nervioso. Al conjunto de fibras musculares inervadas por una sola fibra nerviosa se le denomina unidad motora, y esta unidad responde al unísono ante la estimulación de su fibra nerviosa. Las unidades motoras de mayor tamaño se utilizan, generalmente, para movimientos "groseros", pero las unidades motoras pequeñas se emplean para movimientos finos y delicados que ameritan alto grado de control. La unidad funcional de un músculo esquelético se conoce como sarcómero. Cada sarcómero está delimitado por dos líneas Z y compuesto por filamentos de actina y miosina (proteínas contráctiles) interdigitadas unas con otras. Las zonas dentro de sarcómeros sucesivos que solo contienen filamentos finos de actina conforman las llamadas zonas claras, o estriaciones claras, que se observan en el microscopio óptico. Las zonas de los sarcómeros que contienen filamentos gruesos de miosina dan lugar a las estriaciones oscuras de los músculos esqueléticos. La contracción del músculo esquelético implica el deslizamiento de las fibras de actina y miosina (una sobre la otra) y no el acortamiento de dichas fibras proteicas.
                 </p>
-                <img src="img/musculos-esqueleticos.jpg" alt="Estructura de músculos esqueléticos" class="imagen-derecha">
+                <img src="img/musculos-esqueleticos.jpg" alt="Estructura de músculos esqueléticos" class="imagen-derecha zoomable" onclick="openZoomModal(this)">
             </div>
             <h3><strong>Musculos cardiacos:</strong></h3>
             <div class="contenido-flex">
                 <p>
                     El corazón está compuesto de una clase especial de músculo estriado que, a diferencia del músculo esquelético, presenta conexiones estrechas entre sus fibras que le permiten funcionar como un sincitio. Es un músculo automático, es decir, un músculo capaz de producir su propia estimulación (contracción), sin la necesidad de la función del sistema nervioso. La inervación cardiaca del sistema nervioso solo proporciona un mecanismo de control de la función contráctil, pero no la origina. El aparato contráctil del corazón que le permite funcionar como una bomba, también está formado por sarcómeros delimitados por dos líneas Z. Sus fibras o células musculares (miocitos cardiacos), son ramificadas y están unidas entre sí a través de estructuras denominadas discos intercalares y uniones en hendidura. Los discos intercalares son estructuras de baja resistencia a través de los cuales puede conducirse la excitación eléctrica de una célula a otra. El automatismo cardiaco está a cargo de unas células musculares especializadas que generan la actividad eléctrica espontánea y rítmica que se transmite a las aurículas, de manera que estas se contraen al unísono y, con cierto retardo, pasan al sistema ventricular, que secuencialmente se contrae después de estas.
                 </p>
-                <img src="img/musculos-cardiacos.jpg" alt="Estructura de músculos esqueléticos" class="imagen-derecha">
+                <img src="img/musculos-cardiacos.jpg" alt="Estructura de músculos cardíacos" class="imagen-derecha zoomable" onclick="openZoomModal(this)">
             </div>
             <h3><strong>Musculos lisos:</strong></h3>
             <div class="contenido-flex">
                 <p>
                     El músculo liso se diferencia del músculo esquelético en que no posee estriaciones transversales visibles al microscopio. También tiene actina y miosina como aparato contráctil deslizante, pero estas proteínas no están dispuestas de forma regular y ordenada, como sucede en el músculo estriado. En vez de líneas Z, las fibras musculares del músculo liso poseen cuerpos densos en su citosol que están unidos a la membrana plasmática y que se unen, a su vez, con los filamentos de actina. Generalmente, estos músculos poseen pocas mitocondrias y su actividad mecánica depende del metabolismo de la glucosa. Son músculos involuntarios, es decir, están inervados por fibras nerviosas que no están bajo el control de la voluntad (por más que se quiera, no se puede inducir el movimiento de los intestinos voluntariamente). Existen varios tipos de músculos lisos, algunos con actividad automática (como las fibras del músculo cardiaco) y otros no.
                 </p>
-                <img src="img/musculos-lisos.jpg" alt="Estructura de músculos esqueléticos" class="imagen-derecha">
+                <img src="img/musculos-lisos.jpg" alt="Estructura de músculos lisos" class="imagen-derecha zoomable" onclick="openZoomModal(this)">
             </div>
         </section>
 
@@ -125,19 +238,82 @@
 
     </main>
 
+    <!-- Modal de zoom para imágenes -->
+    <div id="zoomModal" class="zoom-modal">
+        <div class="zoom-content">
+            <button class="zoom-close" onclick="closeZoomModal()">&times;</button>
+            <img id="zoomImage" class="zoom-image" src="" alt="">
+            <div id="zoomCaption" class="zoom-caption"></div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-text">
-                © 2025 MuscleQuest - Aplicación educativa | <a href="acerca-de-nosotros.html">Acerca de nosotros</a>
-            </div>
-            <div class="footer-logo">
-                <img src="img/escudo-colegio(1).jpg" alt="Escudo del colegio" class="escudo-colegio">
-            </div>
-        </div>
+        © 2025 MuscleQuest - Aplicación educativa | <a href="acerca-de-nosotros.html">Acerca de nosotros</a>
     </footer>
 
     <!-- Scripts -->
     <script src="js/menu.js"></script>
+    <script>
+        // Funcionalidad de zoom para imágenes
+        function openZoomModal(img) {
+            const modal = document.getElementById('zoomModal');
+            const zoomImage = document.getElementById('zoomImage');
+            const zoomCaption = document.getElementById('zoomCaption');
+            
+            // Configurar la imagen y el texto alternativo
+            zoomImage.src = img.src;
+            zoomImage.alt = img.alt;
+            zoomCaption.textContent = img.alt;
+            
+            // Mostrar el modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+            
+            // Añadir evento para cerrar con tecla Escape
+            document.addEventListener('keydown', handleEscapeKey);
+        }
+        
+        function closeZoomModal() {
+            const modal = document.getElementById('zoomModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restaurar scroll del body
+            
+            // Remover evento de tecla Escape
+            document.removeEventListener('keydown', handleEscapeKey);
+        }
+        
+        function handleEscapeKey(event) {
+            if (event.key === 'Escape') {
+                closeZoomModal();
+            }
+        }
+        
+        // Cerrar modal al hacer clic fuera de la imagen
+        document.getElementById('zoomModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeZoomModal();
+            }
+        });
+        
+        // Prevenir que el clic en la imagen cierre el modal
+        document.getElementById('zoomImage').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+        
+        // Añadir efecto de hover mejorado a las imágenes zoomables
+        document.addEventListener('DOMContentLoaded', function() {
+            const zoomableImages = document.querySelectorAll('.zoomable');
+            zoomableImages.forEach(img => {
+                img.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.02)';
+                });
+                
+                img.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
